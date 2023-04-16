@@ -2,12 +2,15 @@ let dibujo = document.querySelector('#dibujo');
 let botoncopy = document.querySelector("#copy");
 let hide = document.querySelector("#hide");
 var errorSpan = document.getElementById("formError");
+salida = document.getElementById("salida")
+function copiar(){
+    navigator.clipboard.writeText(salida.value)
+}
 function encriptar (){
     var texto = document.querySelector("#inputT").value;
     var textoCifrado = texto.replace(/e/gi, "enter").replace(/i/gi, "imes").replace(/a/gi, "ai").replace(/o/gi, "ober").replace(/u/gi, "ufat");
     document.querySelector("#salida").value = textoCifrado;
-    document.querySelector("#inputT").value;
-    var dibujovalue = document.querySelector("#dibujo").value;
+    document.querySelector("#inputT").value = "";
     if(texto != "") {
         dibujo.style.display = 'none';
         botoncopy.style.display = 'initial';
@@ -18,7 +21,7 @@ function encriptar (){
         dibujo.style.display = ''
         hide.style.display = '';
         botoncopy.style.display = 'none';
-        errorSpan.innerHTML = "⚠️ Agregue un texto para encriptar" // plain javascript
+        errorSpan.innerHTML = "🚫 Agregue un texto para encriptar" // plain javascript
     }
 }
 function desencriptar (){ 
@@ -31,9 +34,10 @@ function desencriptar (){
     }
     else{
         dibujo.style.display = '';
-        errorSpan.innerHTML = "⚠️ Agregue un texto para desencriptar";
+        errorSpan.innerHTML = "🚫 Agregue un texto para desencriptar";
     }
+    document.querySelector("#inputT").value = "";
 }
 boton1= document.querySelector("#encriptar"); boton1.onclick = encriptar;
 boton2= document.querySelector("#desencriptar"); boton2.onclick = desencriptar;
-boton3= document.querySelector("#copy");
+boton3= document.querySelector("#copy"); boton3.onclick = copiar;
