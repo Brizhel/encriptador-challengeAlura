@@ -9,6 +9,7 @@
     <title>Encriptador</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="educacion.png" type="image/x-icon">
 </head>
 <body>
     <main>
@@ -16,7 +17,7 @@
         <div class="formulario">
             <textarea class="textT" type="text" name="inputT" id="inputT" placeholder="Ingrese el texto aquí" required pattern="[a-z]" oninput="this.value = this.value.replace(/[A-Z]/g, function(caracter) { return caracter.toLowerCase(); }).replace(/[^a-z,\.\n ]/g, '')" title="Por favor ingrese sólo letras en minúsculas"></textarea>
             <span id="formError"></span>
-            <p class="mensaje"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Sólo letras en minúsculas y acentos</p>
+            <p class="mensaje"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Sólo letras en minúsculas sin acentos</p>
             <input class="button" type="button" value="Encriptar" id="encriptar">
             <input class="button" type="button" class="btn" value="Desencriptar" id="desencriptar">
         </div>
