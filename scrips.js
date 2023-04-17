@@ -44,7 +44,7 @@ function desencriptar (){
     }
     else{
         dibujo.style.display = '';
-        errorSpan.innerHTML = "&#10060 Agregue un texto para desencriptar";
+        errorSpan.innerHTML = "⛔ Agregue un texto para desencriptar";
     }
     document.querySelector("#inputT").value = "";
 }
