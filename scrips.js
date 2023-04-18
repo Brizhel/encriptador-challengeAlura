@@ -43,8 +43,11 @@ function desencriptar (){
         errorSpan.innerHTML = "" ;
     }
     else{
-        dibujo.style.display = '';
+        dibujo.style.display = ''
+        hide.style.display = '';
+        botoncopy.style.display = 'none';
         errorSpan.innerHTML = "⛔ Agregue un texto para desencriptar";
+        setTimeout(mostrarMensaje,2000);
     }
     document.querySelector("#inputT").value = "";
 }
