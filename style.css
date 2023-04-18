@@ -28,6 +28,20 @@ body{
     font-size: 2em;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
+    letter-spacing: 0.09em;
+    text-align: justify;
+    /*overflow:hidden;*/
+}
+::-webkit-scrollbar{
+    background: rgba(218, 229, 249,0.7);
+    width: 5px;
+ }
+ ::-webkit-scrollbar-thumb{
+    background: rgba(38, 57, 94, 0.7);
+    width: 2.5px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: rgba(8, 16, 31, 0.7);
 }
 #inputT:hover{
     cursor: default;
