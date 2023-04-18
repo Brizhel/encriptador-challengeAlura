@@ -1,5 +1,5 @@
 body{
-    background-color: #DAE5F9;
+    background-color: rgba(218, 229, 249,0.7);
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -20,7 +20,6 @@ body{
 }
 #inputT{
     position: relative;
-    left: 0vw;
     width: 95%;
     resize: none;
     border: none;
@@ -34,7 +33,7 @@ body{
     cursor: default;
 }
 #formError{
-    display: inline-block;
+    display: block;
     position: relative;
     top: -4vh;
     width: 70%;
@@ -42,6 +41,10 @@ body{
     height: 2vh;
     font-size: 1em;
     font-weight: bold;
+    color: rgba(0, 0, 0, 0.65);
+    text-shadow: 0.5px 0.5px 2px rgba(27, 2, 2, 0.6);
+    margin: 0 auto;
+
 }
 .button{
     width: 30vh;
@@ -86,6 +89,7 @@ body{
     margin-right: 0;
     color: #0a3871;
     display: none;
+    max-width: 90%;
 }
 textarea:focus{
     outline: none ;
@@ -139,23 +143,35 @@ textarea:focus{
     cursor: default;
 }
 @media screen and (max-width: 980px){
+    #logo{
+        position: relative;
+        float: none; 
+        display: inline-block;
+        top: 5vh;
+        /* left: 2vw; */
+        /* display: none; */
+    }
     .formulario{
-        display: flexbox;
+        display: block;
         float: none;
         width: 80vw;
-        height: 53.5vh;
-        /*margin: 25vh 20% 10vh 20%;*/
-        margin-top: 25vh;
-        margin-bottom: 10vh;
+        height: 75vh;
+        margin: 15vh auto;
     }
     #inputT{
+        height: 65%;
         margin: 0 auto;
     }
     .button{
-        margin-bottom: 1vh;
+        display: block;
+        margin: 2vh auto;
+        width: 70%;
+    }
+    #copy{
+        width: 70%;
     }
     .salida{
-        display: flexbox;
+        display: block;
         float: none;
         width: 80vw;
         height: 60vh;
@@ -163,5 +179,17 @@ textarea:focus{
     }
     #salida{
         height: 75%;
+    }
+    #dibujo{
+        width: 50%;
+        margin: 15% auto 0 auto;
+    }
+    #hide {
+        margin: 0 auto;
+    }
+}
+@media screen and (min-height: 86vw){
+    #dibujo{
+        height: 35vh;
     }
 }
