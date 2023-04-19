@@ -1,7 +1,7 @@
 body{
     background-color: rgba(218, 229, 249,0.7);
     font-family: 'Montserrat', sans-serif;
-    transition: 2s all;
+    transition: 500ms all;
 }
 
 .formulario{
