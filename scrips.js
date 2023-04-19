@@ -3,14 +3,37 @@ let botoncopy = document.querySelector("#copy");
 let hide = document.querySelector("#hide");
 var errorSpan = document.getElementById("formError");
 salida = document.getElementById("salida")
+var avisoEncriptar = ("⛔ Agregue un texto para encriptar")
+var avisoDesencriptar = ("⛔ Agregue un texto para desencriptar")
+var avisoCopiado = ("&#10003 Mensaje copiado")
+var o = 0;
+
+function animation(){
+    if (o < 0.5){
+        o = o + 0.3;
+    }
+    if ((o > 0.5) && (o < 1)){
+        o = o + 0.02;
+    }
+    errorSpan.style.color = "rgba(0, 0, 0, " + o + ")"
+    errorSpan.style.transform="scale(" + (0.2 + o) + ")"
+}
+
+function clear(){
+    errorSpan.innerHTML = "";
+    clearInterval(intervalid);
+    o = 0;
+}
 function copiar(){
     navigator.clipboard.writeText(salida.value)
-    errorSpan.innerHTML = "&#10003 Mensaje copiado"
-    setTimeout(mostrarMensaje,2000)
+    mostrarMensaje(avisoCopiado);
 
 }
-function mostrarMensaje(){
-    errorSpan.innerHTML = "";
+function mostrarMensaje(mensaje){
+    o = 0;
+    a = true;
+    errorSpan.innerHTML = mensaje;
+    setTimeout(clear,2500);
 }
 function encriptar (){
     var texto = document.querySelector("#inputT").value;
@@ -21,14 +44,13 @@ function encriptar (){
         dibujo.style.display = 'none';
         botoncopy.style.display = 'initial';
         hide.style.display = 'none';
-        errorSpan.innerHTML = "" ;
     }
     else{
         dibujo.style.display = ''
         hide.style.display = '';
         botoncopy.style.display = 'none';
-        errorSpan.innerHTML = "⛔ Agregue un texto para encriptar"
-        setTimeout(mostrarMensaje,2000)
+        intervalid=setInterval(animation,25);
+        mostrarMensaje(avisoEncriptar);
     }
 }
 function desencriptar (){ 
@@ -46,8 +68,8 @@ function desencriptar (){
         dibujo.style.display = ''
         hide.style.display = '';
         botoncopy.style.display = 'none';
-        errorSpan.innerHTML = "⛔ Agregue un texto para desencriptar";
-        setTimeout(mostrarMensaje,2000);
+        intervalid=setInterval(animation,25);
+        mostrarMensaje(avisoDesencriptar)
     }
     document.querySelector("#inputT").value = "";
 }
