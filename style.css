@@ -61,9 +61,14 @@ body{
     height: 2vh;
     font-size: 1em;
     font-weight: bold;
-    color: rgb(0, 0, 0, 0);
-    text-shadow: 0.5px 0.5px 2px rgba(27, 2, 2, 0.418);
+    text-shadow: 0.5px 0.5px 2px rgba(15, 14, 14, 0.13);
     margin: 0 auto;
+}
+.selected{
+    animation-delay: 10ms;
+    animation-name: fadding;
+    animation-duration: 2s;
+    animation-fill-mode:  forwards;
 }
 .button{
     width: 30vh;
@@ -218,3 +223,12 @@ textarea:focus{
         height: 35vh;
     }
 }
+@keyframes fadding {
+    0% { transform: translateX(0);
+         opacity: 0.2; }
+    25% { transform: translateX(5px) }
+    50% { transform: translateX(-5px) }
+    75% { transform: translateX(5px) }
+    100% { transform: translateX(0) ;
+           opacity: 1;}   
+  }
